@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **get_version**
-> InlineResponse2001 get_version()
+> GetVersion200Response get_version()
 
 Return Running Software Version.
 
@@ -23,7 +23,7 @@ This endpoint returns the version of Ory Hydra.  If the service supports TLS Edg
 import time
 import ory_hydra_client
 from ory_hydra_client.api import metadata_api
-from ory_hydra_client.model.inline_response2001 import InlineResponse2001
+from ory_hydra_client.model.get_version200_response import GetVersion200Response
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**GetVersion200Response**](GetVersion200Response.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **is_ready**
-> InlineResponse200 is_ready()
+> IsReady200Response is_ready()
 
 Check HTTP Server and Database Status
 
@@ -151,8 +151,8 @@ This endpoint returns a HTTP 200 status code when Ory Hydra is up running and th
 import time
 import ory_hydra_client
 from ory_hydra_client.api import metadata_api
-from ory_hydra_client.model.inline_response200 import InlineResponse200
-from ory_hydra_client.model.inline_response503 import InlineResponse503
+from ory_hydra_client.model.is_ready503_response import IsReady503Response
+from ory_hydra_client.model.is_ready200_response import IsReady200Response
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -181,7 +181,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**IsReady200Response**](IsReady200Response.md)
 
 ### Authorization
 
