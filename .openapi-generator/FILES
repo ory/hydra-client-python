@@ -25,6 +25,8 @@ docs/JsonPatch.md
 docs/JsonWebKey.md
 docs/JsonWebKeySet.md
 docs/JwkApi.md
+docs/KeysetPaginationRequestParameters.md
+docs/KeysetPaginationResponseHeaders.md
 docs/MetadataApi.md
 docs/OAuth2Api.md
 docs/OAuth2Client.md
@@ -32,7 +34,6 @@ docs/OAuth2ClientTokenLifespans.md
 docs/OAuth2ConsentRequest.md
 docs/OAuth2ConsentRequestOpenIDConnectContext.md
 docs/OAuth2ConsentSession.md
-docs/OAuth2ConsentSessionExpiresAt.md
 docs/OAuth2LoginRequest.md
 docs/OAuth2LogoutRequest.md
 docs/OAuth2RedirectTo.md
@@ -40,8 +41,6 @@ docs/OAuth2TokenExchange.md
 docs/OidcApi.md
 docs/OidcConfiguration.md
 docs/OidcUserInfo.md
-docs/Pagination.md
-docs/PaginationHeaders.md
 docs/RFC6749ErrorJson.md
 docs/RejectOAuth2Request.md
 docs/TokenPagination.md
@@ -90,20 +89,19 @@ ory_hydra_client/models/is_ready503_response.py
 ory_hydra_client/models/json_patch.py
 ory_hydra_client/models/json_web_key.py
 ory_hydra_client/models/json_web_key_set.py
+ory_hydra_client/models/keyset_pagination_request_parameters.py
+ory_hydra_client/models/keyset_pagination_response_headers.py
 ory_hydra_client/models/o_auth2_client.py
 ory_hydra_client/models/o_auth2_client_token_lifespans.py
 ory_hydra_client/models/o_auth2_consent_request.py
 ory_hydra_client/models/o_auth2_consent_request_open_id_connect_context.py
 ory_hydra_client/models/o_auth2_consent_session.py
-ory_hydra_client/models/o_auth2_consent_session_expires_at.py
 ory_hydra_client/models/o_auth2_login_request.py
 ory_hydra_client/models/o_auth2_logout_request.py
 ory_hydra_client/models/o_auth2_redirect_to.py
 ory_hydra_client/models/o_auth2_token_exchange.py
 ory_hydra_client/models/oidc_configuration.py
 ory_hydra_client/models/oidc_user_info.py
-ory_hydra_client/models/pagination.py
-ory_hydra_client/models/pagination_headers.py
 ory_hydra_client/models/reject_o_auth2_request.py
 ory_hydra_client/models/rfc6749_error_json.py
 ory_hydra_client/models/token_pagination.py
@@ -147,6 +145,8 @@ test/test_json_patch.py
 test/test_json_web_key.py
 test/test_json_web_key_set.py
 test/test_jwk_api.py
+test/test_keyset_pagination_request_parameters.py
+test/test_keyset_pagination_response_headers.py
 test/test_metadata_api.py
 test/test_o_auth2_api.py
 test/test_o_auth2_client.py
@@ -154,7 +154,6 @@ test/test_o_auth2_client_token_lifespans.py
 test/test_o_auth2_consent_request.py
 test/test_o_auth2_consent_request_open_id_connect_context.py
 test/test_o_auth2_consent_session.py
-test/test_o_auth2_consent_session_expires_at.py
 test/test_o_auth2_login_request.py
 test/test_o_auth2_logout_request.py
 test/test_o_auth2_redirect_to.py
@@ -162,8 +161,6 @@ test/test_o_auth2_token_exchange.py
 test/test_oidc_api.py
 test/test_oidc_configuration.py
 test/test_oidc_user_info.py
-test/test_pagination.py
-test/test_pagination_headers.py
 test/test_reject_o_auth2_request.py
 test/test_rfc6749_error_json.py
 test/test_token_pagination.py

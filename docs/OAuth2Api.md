@@ -42,7 +42,22 @@ Method | HTTP request | Description
 
 Accept OAuth 2.0 Consent Request
 
-When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider to authenticate the subject and then tell Ory now about it. If the subject authenticated, he/she must now be asked if the OAuth 2.0 Client which initiated the flow should be allowed to access the resources on the subject's behalf.  The consent challenge is appended to the consent provider's URL to which the subject's user-agent (browser) is redirected to. The consent provider uses that challenge to fetch information on the OAuth2 request and then tells Ory if the subject accepted or rejected the request.  This endpoint tells Ory that the subject has authorized the OAuth 2.0 client to access resources on his/her behalf. The consent provider includes additional information, such as session data for access and ID tokens, and if the consent request should be used as basis for future requests.  The response contains a redirect URL which the consent provider should redirect the user-agent to.  The default consent provider is available via the Ory Managed Account Experience. To customize the consent provider, please head over to the OAuth 2.0 documentation.
+When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider
+to authenticate the subject and then tell Ory now about it. If the subject authenticated, he/she must now be asked if
+the OAuth 2.0 Client which initiated the flow should be allowed to access the resources on the subject's behalf.
+
+The consent challenge is appended to the consent provider's URL to which the subject's user-agent (browser) is redirected to. The consent
+provider uses that challenge to fetch information on the OAuth2 request and then tells Ory if the subject accepted
+or rejected the request.
+
+This endpoint tells Ory that the subject has authorized the OAuth 2.0 client to access resources on his/her behalf.
+The consent provider includes additional information, such as session data for access and ID tokens, and if the
+consent request should be used as basis for future requests.
+
+The response contains a redirect URL which the consent provider should redirect the user-agent to.
+
+The default consent provider is available via the Ory Managed Account Experience. To customize the consent provider, please
+head over to the OAuth 2.0 documentation.
 
 ### Example
 
@@ -114,7 +129,17 @@ No authorization required
 
 Accept OAuth 2.0 Login Request
 
-When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider to authenticate the subject and then tell the Ory OAuth2 Service about it.  The authentication challenge is appended to the login provider URL to which the subject's user-agent (browser) is redirected to. The login provider uses that challenge to fetch information on the OAuth2 request and then accept or reject the requested authentication process.  This endpoint tells Ory that the subject has successfully authenticated and includes additional information such as the subject's ID and if Ory should remember the subject's subject agent for future authentication attempts by setting a cookie.  The response contains a redirect URL which the login provider should redirect the user-agent to.
+When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider
+to authenticate the subject and then tell the Ory OAuth2 Service about it.
+
+The authentication challenge is appended to the login provider URL to which the subject's user-agent (browser) is redirected to. The login
+provider uses that challenge to fetch information on the OAuth2 request and then accept or reject the requested authentication process.
+
+This endpoint tells Ory that the subject has successfully authenticated and includes additional information such as
+the subject's ID and if Ory should remember the subject's subject agent for future authentication attempts by setting
+a cookie.
+
+The response contains a redirect URL which the login provider should redirect the user-agent to.
 
 ### Example
 
@@ -186,7 +211,9 @@ No authorization required
 
 Accept OAuth 2.0 Session Logout Request
 
-When a user or an application requests Ory OAuth 2.0 to remove the session state of a subject, this endpoint is used to confirm that logout request.  The response contains a redirect URL which the consent provider should redirect the user-agent to.
+When a user or an application requests Ory OAuth 2.0 to remove the session state of a subject, this endpoint is used to confirm that logout request.
+
+The response contains a redirect URL which the consent provider should redirect the user-agent to.
 
 ### Example
 
@@ -327,7 +354,8 @@ No authorization required
 
 Create OAuth 2.0 Client
 
-Create a new OAuth 2.0 client. If you pass `client_secret` the secret is used, otherwise a random secret is generated. The secret is echoed in the response. It is not possible to retrieve it later on.
+Create a new OAuth 2.0 client. If you pass `client_secret` the secret is used, otherwise a random secret
+is generated. The secret is echoed in the response. It is not possible to retrieve it later on.
 
 ### Example
 
@@ -397,7 +425,12 @@ No authorization required
 
 Delete OAuth 2.0 Client
 
-Delete an existing OAuth 2.0 Client by its ID.  OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usually, OAuth 2.0 clients are generated for applications which want to consume your OAuth 2.0 or OpenID Connect capabilities.  Make sure that this endpoint is well protected and only callable by first-party components.
+Delete an existing OAuth 2.0 Client by its ID.
+
+OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usually, OAuth 2.0 clients are
+generated for applications which want to consume your OAuth 2.0 or OpenID Connect capabilities.
+
+Make sure that this endpoint is well protected and only callable by first-party components.
 
 ### Example
 
@@ -529,7 +562,11 @@ No authorization required
 
 Delete Trusted OAuth2 JWT Bearer Grant Type Issuer
 
-Use this endpoint to delete trusted JWT Bearer Grant Type Issuer. The ID is the one returned when you created the trust relationship.  Once deleted, the associated issuer will no longer be able to perform the JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grant.
+Use this endpoint to delete trusted JWT Bearer Grant Type Issuer. The ID is the one returned when you
+created the trust relationship.
+
+Once deleted, the associated issuer will no longer be able to perform the JSON Web Token (JWT) Profile
+for OAuth 2.0 Client Authentication and Authorization Grant.
 
 ### Example
 
@@ -595,7 +632,10 @@ No authorization required
 
 Get an OAuth 2.0 Client
 
-Get an OAuth 2.0 client by its ID. This endpoint never returns the client secret.  OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usually, OAuth 2.0 clients are generated for applications which want to consume your OAuth 2.0 or OpenID Connect capabilities.
+Get an OAuth 2.0 client by its ID. This endpoint never returns the client secret.
+
+OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usually, OAuth 2.0 clients are
+generated for applications which want to consume your OAuth 2.0 or OpenID Connect capabilities.
 
 ### Example
 
@@ -664,7 +704,16 @@ No authorization required
 
 Get OAuth 2.0 Consent Request
 
-When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider to authenticate the subject and then tell Ory now about it. If the subject authenticated, he/she must now be asked if the OAuth 2.0 Client which initiated the flow should be allowed to access the resources on the subject's behalf.  The consent challenge is appended to the consent provider's URL to which the subject's user-agent (browser) is redirected to. The consent provider uses that challenge to fetch information on the OAuth2 request and then tells Ory if the subject accepted or rejected the request.  The default consent provider is available via the Ory Managed Account Experience. To customize the consent provider, please head over to the OAuth 2.0 documentation.
+When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider
+to authenticate the subject and then tell Ory now about it. If the subject authenticated, he/she must now be asked if
+the OAuth 2.0 Client which initiated the flow should be allowed to access the resources on the subject's behalf.
+
+The consent challenge is appended to the consent provider's URL to which the subject's user-agent (browser) is redirected to. The consent
+provider uses that challenge to fetch information on the OAuth2 request and then tells Ory if the subject accepted
+or rejected the request.
+
+The default consent provider is available via the Ory Managed Account Experience. To customize the consent provider, please
+head over to the OAuth 2.0 documentation.
 
 ### Example
 
@@ -734,7 +783,15 @@ No authorization required
 
 Get OAuth 2.0 Login Request
 
-When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider to authenticate the subject and then tell the Ory OAuth2 Service about it.  Per default, the login provider is Ory itself. You may use a different login provider which needs to be a web-app you write and host, and it must be able to authenticate (\"show the subject a login screen\") a subject (in OAuth2 the proper name for subject is \"resource owner\").  The authentication challenge is appended to the login provider URL to which the subject's user-agent (browser) is redirected to. The login provider uses that challenge to fetch information on the OAuth2 request and then accept or reject the requested authentication process.
+When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider
+to authenticate the subject and then tell the Ory OAuth2 Service about it.
+
+Per default, the login provider is Ory itself. You may use a different login provider which needs to be a web-app
+you write and host, and it must be able to authenticate ("show the subject a login screen")
+a subject (in OAuth2 the proper name for subject is "resource owner").
+
+The authentication challenge is appended to the login provider URL to which the subject's user-agent (browser) is redirected to. The login
+provider uses that challenge to fetch information on the OAuth2 request and then accept or reject the requested authentication process.
 
 ### Example
 
@@ -874,7 +931,8 @@ No authorization required
 
 Get Trusted OAuth2 JWT Bearer Grant Type Issuer
 
-Use this endpoint to get a trusted JWT Bearer Grant Type Issuer. The ID is the one returned when you created the trust relationship.
+Use this endpoint to get a trusted JWT Bearer Grant Type Issuer. The ID is the one returned when you
+created the trust relationship.
 
 ### Example
 
@@ -943,7 +1001,9 @@ No authorization required
 
 Introspect OAuth2 Access and Refresh Tokens
 
-The introspection endpoint allows to check if a token (both refresh and access) is active or not. An active token is neither expired nor revoked. If a token is active, additional information on the token will be included. You can set additional data for a token by setting `session.access_token` during the consent flow.
+The introspection endpoint allows to check if a token (both refresh and access) is active or not. An active token
+is neither expired nor revoked. If a token is active, additional information on the token will be included. You can
+set additional data for a token by setting `session.access_token` during the consent flow.
 
 ### Example
 
@@ -1014,7 +1074,8 @@ No authorization required
 
 List OAuth 2.0 Clients
 
-This endpoint lists all clients in the database, and never returns client secrets. As a default it lists the first 100 clients.
+This endpoint lists all clients in the database, and never returns client secrets.
+As a default it lists the first 100 clients.
 
 ### Example
 
@@ -1037,7 +1098,7 @@ with ory_hydra_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ory_hydra_client.OAuth2Api(api_client)
     page_size = 250 # int | Items per Page  This is the number of items per page to return. For details on pagination please head over to the [pagination documentation](https://www.ory.sh/docs/ecosystem/api-design#pagination). (optional) (default to 250)
-    page_token = '1' # str | Next Page Token  The next page token. For details on pagination please head over to the [pagination documentation](https://www.ory.sh/docs/ecosystem/api-design#pagination). (optional) (default to '1')
+    page_token = 'page_token_example' # str | Next Page Token  The next page token. For details on pagination please head over to the [pagination documentation](https://www.ory.sh/docs/ecosystem/api-design#pagination). (optional)
     client_name = 'client_name_example' # str | The name of the clients to filter by. (optional)
     owner = 'owner_example' # str | The owner of the clients to filter by. (optional)
 
@@ -1058,7 +1119,7 @@ with ory_hydra_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page_size** | **int**| Items per Page  This is the number of items per page to return. For details on pagination please head over to the [pagination documentation](https://www.ory.sh/docs/ecosystem/api-design#pagination). | [optional] [default to 250]
- **page_token** | **str**| Next Page Token  The next page token. For details on pagination please head over to the [pagination documentation](https://www.ory.sh/docs/ecosystem/api-design#pagination). | [optional] [default to &#39;1&#39;]
+ **page_token** | **str**| Next Page Token  The next page token. For details on pagination please head over to the [pagination documentation](https://www.ory.sh/docs/ecosystem/api-design#pagination). | [optional] 
  **client_name** | **str**| The name of the clients to filter by. | [optional] 
  **owner** | **str**| The owner of the clients to filter by. | [optional] 
 
@@ -1089,7 +1150,9 @@ No authorization required
 
 List OAuth 2.0 Consent Sessions of a Subject
 
-This endpoint lists all subject's granted consent sessions, including client and granted scope. If the subject is unknown or has not granted any consent sessions yet, the endpoint returns an empty JSON array with status code 200 OK.
+This endpoint lists all subject's granted consent sessions, including client and granted scope.
+If the subject is unknown or has not granted any consent sessions yet, the endpoint returns an
+empty JSON array with status code 200 OK.
 
 ### Example
 
@@ -1160,7 +1223,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_trusted_o_auth2_jwt_grant_issuers**
-> List[TrustedOAuth2JwtGrantIssuer] list_trusted_o_auth2_jwt_grant_issuers(max_items=max_items, default_items=default_items, issuer=issuer)
+> List[TrustedOAuth2JwtGrantIssuer] list_trusted_o_auth2_jwt_grant_issuers(page_size=page_size, page_token=page_token, issuer=issuer)
 
 List Trusted OAuth2 JWT Bearer Grant Type Issuers
 
@@ -1186,13 +1249,13 @@ configuration = ory_hydra_client.Configuration(
 with ory_hydra_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ory_hydra_client.OAuth2Api(api_client)
-    max_items = 56 # int |  (optional)
-    default_items = 56 # int |  (optional)
+    page_size = 250 # int | Items per Page  This is the number of items per page to return. For details on pagination please head over to the [pagination documentation](https://www.ory.sh/docs/ecosystem/api-design#pagination). (optional) (default to 250)
+    page_token = 'page_token_example' # str | Next Page Token  The next page token. For details on pagination please head over to the [pagination documentation](https://www.ory.sh/docs/ecosystem/api-design#pagination). (optional)
     issuer = 'issuer_example' # str | If optional \"issuer\" is supplied, only jwt-bearer grants with this issuer will be returned. (optional)
 
     try:
         # List Trusted OAuth2 JWT Bearer Grant Type Issuers
-        api_response = api_instance.list_trusted_o_auth2_jwt_grant_issuers(max_items=max_items, default_items=default_items, issuer=issuer)
+        api_response = api_instance.list_trusted_o_auth2_jwt_grant_issuers(page_size=page_size, page_token=page_token, issuer=issuer)
         print("The response of OAuth2Api->list_trusted_o_auth2_jwt_grant_issuers:\n")
         pprint(api_response)
     except Exception as e:
@@ -1206,8 +1269,8 @@ with ory_hydra_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **max_items** | **int**|  | [optional] 
- **default_items** | **int**|  | [optional] 
+ **page_size** | **int**| Items per Page  This is the number of items per page to return. For details on pagination please head over to the [pagination documentation](https://www.ory.sh/docs/ecosystem/api-design#pagination). | [optional] [default to 250]
+ **page_token** | **str**| Next Page Token  The next page token. For details on pagination please head over to the [pagination documentation](https://www.ory.sh/docs/ecosystem/api-design#pagination). | [optional] 
  **issuer** | **str**| If optional \&quot;issuer\&quot; is supplied, only jwt-bearer grants with this issuer will be returned. | [optional] 
 
 ### Return type
@@ -1237,7 +1300,11 @@ No authorization required
 
 OAuth 2.0 Authorize Endpoint
 
-Use open source libraries to perform OAuth 2.0 and OpenID Connect available for any programming language. You can find a list of libraries at https://oauth.net/code/  This endpoint should not be used via the Ory SDK and is only included for technical reasons. Instead, use one of the libraries linked above.
+Use open source libraries to perform OAuth 2.0 and OpenID Connect
+available for any programming language. You can find a list of libraries at https://oauth.net/code/
+
+This endpoint should not be used via the Ory SDK and is only included for technical reasons.
+Instead, use one of the libraries linked above.
 
 ### Example
 
@@ -1302,7 +1369,10 @@ No authorization required
 
 The OAuth 2.0 Device Authorize Endpoint
 
-This endpoint is not documented here because you should never use your own implementation to perform OAuth2 flows. OAuth2 is a very popular protocol and a library for your programming language will exists.  To learn more about this flow please refer to the specification: https://tools.ietf.org/html/rfc8628
+This endpoint is not documented here because you should never use your own implementation to perform OAuth2 flows.
+OAuth2 is a very popular protocol and a library for your programming language will exist.
+
+To learn more about this flow please refer to the specification: https://tools.ietf.org/html/rfc8628
 
 ### Example
 
@@ -1367,7 +1437,11 @@ No authorization required
 
 The OAuth 2.0 Token Endpoint
 
-Use open source libraries to perform OAuth 2.0 and OpenID Connect available for any programming language. You can find a list of libraries here https://oauth.net/code/  This endpoint should not be used via the Ory SDK and is only included for technical reasons. Instead, use one of the libraries linked above.
+Use open source libraries to perform OAuth 2.0 and OpenID Connect
+available for any programming language. You can find a list of libraries here https://oauth.net/code/
+
+This endpoint should not be used via the Ory SDK and is only included for technical reasons.
+Instead, use one of the libraries linked above.
 
 ### Example
 
@@ -1458,7 +1532,12 @@ Name | Type | Description  | Notes
 
 Patch OAuth 2.0 Client
 
-Patch an existing OAuth 2.0 Client using JSON Patch. If you pass `client_secret` the secret will be updated and returned via the API. This is the only time you will be able to retrieve the client secret, so write it down and keep it safe.  OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usually, OAuth 2.0 clients are generated for applications which want to consume your OAuth 2.0 or OpenID Connect capabilities.
+Patch an existing OAuth 2.0 Client using JSON Patch. If you pass `client_secret`
+the secret will be updated and returned via the API. This is the
+only time you will be able to retrieve the client secret, so write it down and keep it safe.
+
+OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usually, OAuth 2.0 clients are
+generated for applications which want to consume your OAuth 2.0 or OpenID Connect capabilities.
 
 ### Example
 
@@ -1531,7 +1610,7 @@ No authorization required
 
 OAuth 2.0 Device Verification Endpoint
 
-This is the device user verification endpoint. The user is redirected here when trying to login using the device flow.
+This is the device user verification endpoint. The user is redirected here when trying to log in using the device flow.
 
 ### Example
 
@@ -1596,7 +1675,21 @@ No authorization required
 
 Reject OAuth 2.0 Consent Request
 
-When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider to authenticate the subject and then tell Ory now about it. If the subject authenticated, he/she must now be asked if the OAuth 2.0 Client which initiated the flow should be allowed to access the resources on the subject's behalf.  The consent challenge is appended to the consent provider's URL to which the subject's user-agent (browser) is redirected to. The consent provider uses that challenge to fetch information on the OAuth2 request and then tells Ory if the subject accepted or rejected the request.  This endpoint tells Ory that the subject has not authorized the OAuth 2.0 client to access resources on his/her behalf. The consent provider must include a reason why the consent was not granted.  The response contains a redirect URL which the consent provider should redirect the user-agent to.  The default consent provider is available via the Ory Managed Account Experience. To customize the consent provider, please head over to the OAuth 2.0 documentation.
+When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider
+to authenticate the subject and then tell Ory now about it. If the subject authenticated, he/she must now be asked if
+the OAuth 2.0 Client which initiated the flow should be allowed to access the resources on the subject's behalf.
+
+The consent challenge is appended to the consent provider's URL to which the subject's user-agent (browser) is redirected to. The consent
+provider uses that challenge to fetch information on the OAuth2 request and then tells Ory if the subject accepted
+or rejected the request.
+
+This endpoint tells Ory that the subject has not authorized the OAuth 2.0 client to access resources on his/her behalf.
+The consent provider must include a reason why the consent was not granted.
+
+The response contains a redirect URL which the consent provider should redirect the user-agent to.
+
+The default consent provider is available via the Ory Managed Account Experience. To customize the consent provider, please
+head over to the OAuth 2.0 documentation.
 
 ### Example
 
@@ -1668,7 +1761,16 @@ No authorization required
 
 Reject OAuth 2.0 Login Request
 
-When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider to authenticate the subject and then tell the Ory OAuth2 Service about it.  The authentication challenge is appended to the login provider URL to which the subject's user-agent (browser) is redirected to. The login provider uses that challenge to fetch information on the OAuth2 request and then accept or reject the requested authentication process.  This endpoint tells Ory that the subject has not authenticated and includes a reason why the authentication was denied.  The response contains a redirect URL which the login provider should redirect the user-agent to.
+When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, Ory asks the login provider
+to authenticate the subject and then tell the Ory OAuth2 Service about it.
+
+The authentication challenge is appended to the login provider URL to which the subject's user-agent (browser) is redirected to. The login
+provider uses that challenge to fetch information on the OAuth2 request and then accept or reject the requested authentication process.
+
+This endpoint tells Ory that the subject has not authenticated and includes a reason why the authentication
+was denied.
+
+The response contains a redirect URL which the login provider should redirect the user-agent to.
 
 ### Example
 
@@ -1740,7 +1842,10 @@ No authorization required
 
 Reject OAuth 2.0 Session Logout Request
 
-When a user or an application requests Ory OAuth 2.0 to remove the session state of a subject, this endpoint is used to deny that logout request. No HTTP request body is required.  The response is empty as the logout provider has to chose what action to perform next.
+When a user or an application requests Ory OAuth 2.0 to remove the session state of a subject, this endpoint is used to deny that logout request.
+No HTTP request body is required.
+
+The response is empty as the logout provider has to chose what action to perform next.
 
 ### Example
 
@@ -1802,11 +1907,12 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **revoke_o_auth2_consent_sessions**
-> revoke_o_auth2_consent_sessions(subject, client=client, all=all)
+> revoke_o_auth2_consent_sessions(subject=subject, client=client, consent_request_id=consent_request_id, all=all)
 
 Revoke OAuth 2.0 Consent Sessions of a Subject
 
-This endpoint revokes a subject's granted consent sessions and invalidates all associated OAuth 2.0 Access Tokens. You may also only revoke sessions for a specific OAuth 2.0 Client ID.
+This endpoint revokes a subject's granted consent sessions and invalidates all
+associated OAuth 2.0 Access Tokens. You may also only revoke sessions for a specific OAuth 2.0 Client ID.
 
 ### Example
 
@@ -1827,13 +1933,14 @@ configuration = ory_hydra_client.Configuration(
 with ory_hydra_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ory_hydra_client.OAuth2Api(api_client)
-    subject = 'subject_example' # str | OAuth 2.0 Consent Subject  The subject whose consent sessions should be deleted.
+    subject = 'subject_example' # str | OAuth 2.0 Consent Subject  The subject whose consent sessions should be deleted. (optional)
     client = 'client_example' # str | OAuth 2.0 Client ID  If set, deletes only those consent sessions that have been granted to the specified OAuth 2.0 Client ID. (optional)
+    consent_request_id = 'consent_request_id_example' # str | Consent Request ID  If set, revoke all token chains derived from this particular consent request ID. (optional)
     all = True # bool | Revoke All Consent Sessions  If set to `true` deletes all consent sessions by the Subject that have been granted. (optional)
 
     try:
         # Revoke OAuth 2.0 Consent Sessions of a Subject
-        api_instance.revoke_o_auth2_consent_sessions(subject, client=client, all=all)
+        api_instance.revoke_o_auth2_consent_sessions(subject=subject, client=client, consent_request_id=consent_request_id, all=all)
     except Exception as e:
         print("Exception when calling OAuth2Api->revoke_o_auth2_consent_sessions: %s\n" % e)
 ```
@@ -1845,8 +1952,9 @@ with ory_hydra_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subject** | **str**| OAuth 2.0 Consent Subject  The subject whose consent sessions should be deleted. | 
+ **subject** | **str**| OAuth 2.0 Consent Subject  The subject whose consent sessions should be deleted. | [optional] 
  **client** | **str**| OAuth 2.0 Client ID  If set, deletes only those consent sessions that have been granted to the specified OAuth 2.0 Client ID. | [optional] 
+ **consent_request_id** | **str**| Consent Request ID  If set, revoke all token chains derived from this particular consent request ID. | [optional] 
  **all** | **bool**| Revoke All Consent Sessions  If set to &#x60;true&#x60; deletes all consent sessions by the Subject that have been granted. | [optional] 
 
 ### Return type
@@ -1876,7 +1984,16 @@ No authorization required
 
 Revokes OAuth 2.0 Login Sessions by either a Subject or a SessionID
 
-This endpoint invalidates authentication sessions. After revoking the authentication session(s), the subject has to re-authenticate at the Ory OAuth2 Provider. This endpoint does not invalidate any tokens.  If you send the subject in a query param, all authentication sessions that belong to that subject are revoked. No OpenID Connect Front- or Back-channel logout is performed in this case.  Alternatively, you can send a SessionID via `sid` query param, in which case, only the session that is connected to that SessionID is revoked. OpenID Connect Back-channel logout is performed in this case.  When using Ory for the identity provider, the login provider will also invalidate the session cookie.
+This endpoint invalidates authentication sessions. After revoking the authentication session(s), the subject
+has to re-authenticate at the Ory OAuth2 Provider. This endpoint does not invalidate any tokens.
+
+If you send the subject in a query param, all authentication sessions that belong to that subject are revoked.
+No OpenID Connect Front- or Back-channel logout is performed in this case.
+
+Alternatively, you can send a SessionID via `sid` query param, in which case, only the session that is connected
+to that SessionID is revoked. OpenID Connect Back-channel logout is performed in this case.
+
+When using Ory for the identity provider, the login provider will also invalidate the session cookie.
 
 ### Example
 
@@ -1944,7 +2061,10 @@ No authorization required
 
 Revoke OAuth 2.0 Access or Refresh Token
 
-Revoking a token (both access and refresh) means that the tokens will be invalid. A revoked access token can no longer be used to make access requests, and a revoked refresh token can no longer be used to refresh an access token. Revoking a refresh token also invalidates the access token that was created with it. A token may only be revoked by the client the token was generated for.
+Revoking a token (both access and refresh) means that the tokens will be invalid. A revoked access token can no
+longer be used to make access requests, and a revoked refresh token can no longer be used to refresh an access token.
+Revoking a refresh token also invalidates the access token that was created with it. A token may only be revoked by
+the client the token was generated for.
 
 ### Example
 
@@ -2028,7 +2148,13 @@ void (empty response body)
 
 Set OAuth 2.0 Client
 
-Replaces an existing OAuth 2.0 Client with the payload you send. If you pass `client_secret` the secret is used, otherwise the existing secret is used.  If set, the secret is echoed in the response. It is not possible to retrieve it later on.  OAuth 2.0 Clients are used to perform OAuth 2.0 and OpenID Connect flows. Usually, OAuth 2.0 clients are generated for applications which want to consume your OAuth 2.0 or OpenID Connect capabilities.
+Replaces an existing OAuth 2.0 Client with the payload you send. If you pass `client_secret` the secret is used,
+otherwise the existing secret is used.
+
+If set, the secret is echoed in the response. It is not possible to retrieve it later on.
+
+OAuth 2.0 Clients are used to perform OAuth 2.0 and OpenID Connect flows. Usually, OAuth 2.0 clients are
+generated for applications which want to consume your OAuth 2.0 or OpenID Connect capabilities.
 
 ### Example
 
@@ -2173,7 +2299,9 @@ No authorization required
 
 Trust OAuth2 JWT Bearer Grant Type Issuer
 
-Use this endpoint to establish a trust relationship for a JWT issuer to perform JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants [RFC7523](https://datatracker.ietf.org/doc/html/rfc7523).
+Use this endpoint to establish a trust relationship for a JWT issuer
+to perform JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication
+and Authorization Grants [RFC7523](https://datatracker.ietf.org/doc/html/rfc7523).
 
 ### Example
 

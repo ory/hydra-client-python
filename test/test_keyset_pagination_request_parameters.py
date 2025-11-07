@@ -15,10 +15,10 @@
 
 import unittest
 
-from ory_hydra_client.models.is_ready200_response import IsReady200Response
+from ory_hydra_client.models.keyset_pagination_request_parameters import KeysetPaginationRequestParameters
 
-class TestIsReady200Response(unittest.TestCase):
-    """IsReady200Response unit test stubs"""
+class TestKeysetPaginationRequestParameters(unittest.TestCase):
+    """KeysetPaginationRequestParameters unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,25 +26,26 @@ class TestIsReady200Response(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> IsReady200Response:
-        """Test IsReady200Response
+    def make_instance(self, include_optional) -> KeysetPaginationRequestParameters:
+        """Test KeysetPaginationRequestParameters
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `IsReady200Response`
+        # uncomment below to create an instance of `KeysetPaginationRequestParameters`
         """
-        model = IsReady200Response()
+        model = KeysetPaginationRequestParameters()
         if include_optional:
-            return IsReady200Response(
-                status = ''
+            return KeysetPaginationRequestParameters(
+                page_size = 1,
+                page_token = ''
             )
         else:
-            return IsReady200Response(
+            return KeysetPaginationRequestParameters(
         )
         """
 
-    def testIsReady200Response(self):
-        """Test IsReady200Response"""
+    def testKeysetPaginationRequestParameters(self):
+        """Test KeysetPaginationRequestParameters"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
